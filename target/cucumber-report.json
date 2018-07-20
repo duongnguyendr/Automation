@@ -1,0 +1,59 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 5043446400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "BaseDriver.initializeDriver(Scenario)"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Login role",
+        "description": "",
+        "id": "logging-test-feature;login-role",
+        "after": [
+          {
+            "result": {
+              "duration": 793538000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "BaseDriver.tearDownTest(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 143095100,
+              "status": "passed"
+            },
+            "output": [
+              "Scenario Passed"
+            ],
+            "line": 5,
+            "name": "I click some thing",
+            "match": {
+              "location": "DemoStepDefinition.iClickSomething()"
+            },
+            "keyword": "Given "
+          }
+        ]
+      }
+    ],
+    "name": "Logging Test Feature",
+    "description": "This feature to verify loggin with 4 roles on many servers",
+    "id": "logging-test-feature",
+    "keyword": "Feature",
+    "uri": "demo.feature"
+  }
+]
