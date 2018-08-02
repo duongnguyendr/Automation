@@ -3,7 +3,7 @@
 <suite thread-count="1" verbose="0" name="Failed suite [Surefire suite]" junit="true">
   <test name="Surefire test">
     <classes>
-      <class name="Project.runner.JUnitRunner"/>
+      <class name="com.gvi.project.runner.JUnitRunner"/>
     </classes>
   </test> <!-- Surefire test -->
 </suite> <!-- Failed suite [Surefire suite] -->

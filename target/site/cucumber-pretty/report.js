@@ -7,7 +7,7 @@ formatter.feature({
   "keyword": "Feature"
 });
 formatter.before({
-  "duration": 5043446400,
+  "duration": 15233650800,
   "status": "passed"
 });
 formatter.scenario({
@@ -20,19 +20,57 @@ formatter.scenario({
 });
 formatter.step({
   "line": 5,
-  "name": "I click some thing",
+  "name": "I navigate to login page",
   "keyword": "Given "
 });
+formatter.step({
+  "line": 6,
+  "name": "I take screenshoots",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 7,
+  "name": "I click on cinema tab",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 8,
+  "name": "I take screenshoots",
+  "keyword": "And "
+});
 formatter.match({
-  "location": "DemoStepDefinition.iClickSomething()"
+  "location": "GeneralStepsDefinition.navigateToLoginPage()"
 });
 formatter.result({
-  "duration": 143095100,
+  "duration": 14847506300,
+  "status": "passed"
+});
+formatter.match({
+  "location": "GeneralStepsDefinition.takeScreenShoots()"
+});
+formatter.embedding("image/png", "embedded0.png");
+formatter.result({
+  "duration": 559960500,
+  "status": "passed"
+});
+formatter.match({
+  "location": "GeneralStepsDefinition.iClickCinemaTab()"
+});
+formatter.result({
+  "duration": 232099900,
+  "status": "passed"
+});
+formatter.match({
+  "location": "GeneralStepsDefinition.takeScreenShoots()"
+});
+formatter.embedding("image/png", "embedded1.png");
+formatter.result({
+  "duration": 374505400,
   "status": "passed"
 });
 formatter.write("Scenario Passed");
 formatter.after({
-  "duration": 793538000,
+  "duration": 2785808300,
   "status": "passed"
 });
 });
