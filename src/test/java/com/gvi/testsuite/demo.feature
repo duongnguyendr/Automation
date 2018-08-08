@@ -4,5 +4,6 @@ Feature: Logging Test Feature
   Scenario: Login role
   Given I navigate to login page
   And I take screenshoots
-  And I click on cinema tab
-  And I take screenshoots
+#  And I click on cinema tab
+#  And I take screenshoots
+  And I click on remove button

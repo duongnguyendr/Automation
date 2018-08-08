@@ -19,6 +19,7 @@ public class HomePage extends BasePage{
 	}
 	public String cinemaTab = "button[text='Who worked with who']";
 	private String homePageHeader = "panel[title='Enovision Movieworld']";
+	private String removeBtn = "button[text=remove]";
 	
 	public void clickOnCinemaTab() {
 		logger.info("Click on Cinema Tab");
@@ -29,13 +30,19 @@ public class HomePage extends BasePage{
 	
 	public void verifyHomaPageLoaded() {
 		logger.info("Waiting for home page load.");
-		try {
-			Thread.sleep(1000);
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
+//		try {
+//			Thread.sleep(1000);
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//		}
 		Panel panel = new Panel(driver, byExtJsComponentQuery.byExtJsComponentQuery(homePageHeader));
 		waitForVisibleElement(panel.topElement, "Header");
+	}
+	
+	public void clickRemoveButton() {
+		logger.info("Click on Remove buton");
+		Button btn = new Button(driver, byExtJsComponentQuery.byExtJsComponentQuery(removeBtn));
+		btn.click();
 	}
 	
 }

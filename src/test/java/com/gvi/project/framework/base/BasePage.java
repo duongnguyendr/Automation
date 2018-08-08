@@ -49,13 +49,29 @@ public class BasePage {
 		findElement(element).click();
 	}
     
-    public WebElement getElementByComponentQuery(String query) {
-    	StringBuilder builder = new StringBuilder();
-    	builder.append("Ext.ComponentQuery.query(\"");
-    	builder.append(query);
-    	builder.append("\")");
-    	System.out.println("Builder: " + builder);
-    	return (WebElement) ((JavascriptExecutor)driver).executeScript(query);
-    }
     
-	}
+    /**
+     * Function wait until ExtJs page load successful
+     */
+    public boolean waitForExtJsPageLoad() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, waitTime);
+            String script =  "try {" + 
+		            			"Ext.getCmp();" + 
+		            			"return	true;}" + 
+		            		"catch(err) {" + 
+		            			"return false;}";
+            wait.until((WebDriver driver) -> {
+                boolean result = false;
+                result = (boolean) ((JavascriptExecutor) driver).executeScript(script);
+                logger.info("result: " + result);
+                return result;
+            });
+            return true;
+        } catch (Exception e) {
+        	System.out.println("Errr");
+            logger.info(e.getMessage());
+            return false;
+        }
+    }
+}

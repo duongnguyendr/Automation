@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 /**
- * @author Taylor York
+ * @author Duong.Nguyen
  */
 public class Button extends ExtJSComponent
 {

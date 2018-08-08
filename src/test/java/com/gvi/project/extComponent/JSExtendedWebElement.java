@@ -1,15 +1,16 @@
 
 package com.gvi.project.extComponent;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class JSExtendedWebElement
-{
-
+public class JSExtendedWebElement {
+	private Logger logger = Logger.getLogger(JSExtendedWebElement.class.getSimpleName());
+	public By by;
     static final protected String FUNCTION_DEFINE_EXTJSWEBDRIVER = "if(typeof ExtJsWebDriver === \"undefined\") {ExtJsWebDriver = function(){}; ExtJsWebDriver.log = function(arg){ if(console && console.log) console.log(arg)} };";
 
     static private final String FUNCTION_highlight = "ExtJsWebDriver.highlight = function(element, timesec) {"
@@ -62,7 +63,9 @@ public class JSExtendedWebElement
     {
         setDriver(driver);
         WebElement element = by.findElement(driver);
+        System.out.println("Element: " + element);
         topElement = element;
+        this.by = by;
     }
 
     /**
@@ -81,6 +84,7 @@ public class JSExtendedWebElement
      */
     public void click()
     {
+    	waitForVisibleElement();
         topElement.click();
     }
 
@@ -259,5 +263,29 @@ public class JSExtendedWebElement
     {
         return true;
     }
-
+    
+    /**
+     * Wait until element visible.
+     * 
+     * @return
+     */
+    public boolean waitForVisibleElement() {
+    	logger.info("Wait for visible element");
+    	if (topElement == null) {
+    		try {
+                WebDriverWait wait = new WebDriverWait(driver, 30);
+                wait.until((WebDriver driver) -> {
+                    boolean result = false;
+                    topElement = by.findElement(driver);
+                    result = topElement != null ? true : false;
+                    return result;
+                });
+                return true;
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+                return false;
+            }
+    	}
+    	return false;
+    }
 }

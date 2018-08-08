@@ -42,4 +42,9 @@ public class GeneralStepsDefinition extends BaseTest{
 	public void iClickCinemaTab() {
 		homePage.clickOnCinemaTab();
 	}
+	
+	@And("^I click on remove button$")
+	public void clickRemoveButton() {
+		homePage.clickRemoveButton();
+	}
 }

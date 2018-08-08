@@ -29,5 +29,6 @@ public class LoginPage extends BasePage {
 	public void navigateToUrl(String url) {
 		logger.info("Navigate to url: " + url);
 		driver.get(url);
+		waitForExtJsPageLoad();
 	}
 }

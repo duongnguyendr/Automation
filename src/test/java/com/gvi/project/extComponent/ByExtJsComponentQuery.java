@@ -10,11 +10,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 /**
- * Created by yorta01 on 9/24/2015.
+ * Created by duong.nguyen
  */
 public class ByExtJsComponentQuery extends By
 {
-
     protected JavascriptExecutor jse;
 
     static final private String FUNCTION_findVisibleComponentElement = "ExtJsWebDriver.findVisibleComponentElement = function (query) {"
